@@ -3,6 +3,7 @@ import { ChevronRight, ArrowRight, Star, TrendingUp, Target, Zap, Users, Award, 
 import HeroFlash from '../components/Hero-section';
 import FAQSection from '../components/ui/Faq';
 import TiltedCard from '../components/ui/TiltedCard'; // adjust path if needed
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -358,6 +359,107 @@ export const Home = () => {
           </div>
         </div>
       </section>
+      {/* Schedule Call Section */}
+<section className="py-36 px-8 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+  {/* Decorative elements */}
+  <div className="absolute top-1/4 -left-20 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl"></div>
+  <div className="absolute bottom-1/3 -right-20 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl"></div>
+  
+  <div className="max-w-7xl mx-auto relative z-10">
+    <div className="grid lg:grid-cols-2 gap-24 items-center">
+      <div>
+        <h2 className="text-7xl font-bold mb-12 font-serif">
+          Let's Build Your <span className="text-yellow-400">Success Roadmap</span>
+        </h2>
+        <p className="text-3xl text-gray-300 mb-12 leading-relaxed">
+          Schedule a 30-minute strategy session with our executive team to explore how we can transform your business.
+        </p>
+        
+        <div className="space-y-8">
+          <div className="flex items-start gap-6">
+            <div className="bg-yellow-400/10 p-3 rounded-lg border border-yellow-400/20">
+              <Target className="w-8 h-8 text-yellow-400" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-3">Clarity First</h3>
+              <p className="text-xl text-gray-400">We'll help identify your most pressing opportunities and challenges.</p>
+            </div>
+          </div>
+          
+          <div className="flex items-start gap-6">
+            <div className="bg-yellow-400/10 p-3 rounded-lg border border-yellow-400/20">
+              <TrendingUp className="w-8 h-8 text-yellow-400" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-3">Growth Focused</h3>
+              <p className="text-xl text-gray-400">Walk away with actionable insights to accelerate your growth.</p>
+            </div>
+          </div>
+          
+          <div className="flex items-start gap-6">
+            <div className="bg-yellow-400/10 p-3 rounded-lg border border-yellow-400/20">
+              <Zap className="w-8 h-8 text-yellow-400" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-3">No Pressure</h3>
+              <p className="text-xl text-gray-400">This is about finding the right fit - no sales pitch.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="bg-gray-900/50 p-12 rounded-3xl border border-gray-800 backdrop-blur-sm">
+        <h3 className="text-4xl font-bold mb-8">Schedule Your Call</h3>
+        <p className="text-xl text-gray-400 mb-12">Select a time that works best for you.</p>
+        
+        <div className="space-y-6">
+          <div>
+            <label className="block text-xl text-gray-300 mb-3">Full Name</label>
+            <input 
+              type="text" 
+              className="w-full bg-gray-900/70 border border-gray-800 rounded-xl px-6 py-4 text-xl focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/30 transition-all" 
+              placeholder="Your name"
+            />
+          </div>
+          
+          <div>
+            <label className="block text-xl text-gray-300 mb-3">Email Address</label>
+            <input 
+              type="email" 
+              className="w-full bg-gray-900/70 border border-gray-800 rounded-xl px-6 py-4 text-xl focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/30 transition-all" 
+              placeholder="your@email.com"
+            />
+          </div>
+          
+          <div>
+            <label className="block text-xl text-gray-300 mb-3">Company</label>
+            <input 
+              type="text" 
+              className="w-full bg-gray-900/70 border border-gray-800 rounded-xl px-6 py-4 text-xl focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/30 transition-all" 
+              placeholder="Company name"
+            />
+          </div>
+          
+          <div>
+            <label className="block text-xl text-gray-300 mb-3">Preferred Date & Time</label>
+            <input 
+              type="datetime-local" 
+              className="w-full bg-gray-900/70 border border-gray-800 rounded-xl px-6 py-4 text-xl focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/30 transition-all" 
+            />
+          </div>
+          
+          <button className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-5 rounded-xl font-semibold text-2xl hover:scale-[1.02] transition-all duration-300 mt-6">
+            Schedule Now
+          </button>
+          
+          <p className="text-gray-500 text-center mt-6">
+            By scheduling, you agree to our <a href="#" className="text-yellow-400 hover:underline">privacy policy</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section className="py-36 px-8">
@@ -370,10 +472,14 @@ export const Home = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-9 justify-center">
-            <button className="group bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-16 py-7 rounded-full font-semibold text-3xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-4">
-              Schedule Strategy Call
-              <ChevronRight className="w-9 h-9 group-hover:translate-x-1.5 transition-transform" />
-            </button>
+           {/* <Link 
+  to="/schedule-call" 
+  className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-all flex items-center gap-2"
+>
+  Schedule Call   <ChevronRight className="w-9 h-9 group-hover:translate-x-1.5 transition-transform" />
+</Link> */}
+            
+          
             
             <button className="border border-yellow-400 text-yellow-400 px-16 py-7 rounded-full font-semibold text-3xl hover:bg-yellow-400 hover:text-black transition-all duration-300">
               Download Brand Guide
