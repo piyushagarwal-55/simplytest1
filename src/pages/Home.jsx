@@ -4,6 +4,9 @@ import HeroFlash from '../components/Hero-section';
 import FAQSection from '../components/ui/Faq';
 import TiltedCard from '../components/ui/TiltedCard'; // adjust path if needed
 import { Link } from 'react-router-dom';
+import TeamCarousel from '../components/ui/TeamCrousel';
+// import PortfolioSection from '../components/ui/ServicesHome';
+// import PremiumPortfolioSection from '../components/ui/ServicesHome';
 
 export const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -275,7 +278,7 @@ export const Home = () => {
           </div>
         </div>
       </section>
-
+     {/* <PremiumPortfolioSection /> */}
       {/* Case Studies Section */}
       <section className="py-36 px-8">
         <div className="max-w-7xl mx-auto">
@@ -496,6 +499,7 @@ export const Home = () => {
       <section>
         <FAQSection />
       </section>
+      <TeamCarousel/>
     </div>
   );
 };

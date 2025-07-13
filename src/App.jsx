@@ -5,11 +5,12 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import Login from './pages/Login';
 import { ErrorPage } from './pages/ErrorPage';
-import { getProducts } from './api/getProducts';
-import { ShowProducts } from './products/ShowProducts';
-import { SingleProduct } from './products/SingleProduct';
-import { showsingleproduct } from './api/showsingleproduct';
+// import { getProducts } from './api/getProducts';
+// import { ShowProducts } from './products/ShowProducts';
+// import ModesWebsite from './products/SingleProduct';
+// import { showsingleproduct } from './api/showsingleproduct';
 import { ScheduleCall } from './pages/ScheduleCall';
+import ModesIncHomepage from './products/SingleProduct';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -36,14 +37,14 @@ const App = () => {
         },
         {
           path: "services",
-          element: <ShowProducts/>,
-          loader: getProducts
+         element: <ModesIncHomepage/>,
+          // loader: getProducts
         },
-        {
-          path: "services/:id",
-          element: <SingleProduct/>,
-          loader: showsingleproduct
-        }
+        // {
+        //   path: "services/:id",
+         
+        //   loader: showsingleproduct
+        // }
       ]
     }
   ]);
